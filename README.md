@@ -3,10 +3,12 @@ ToDo List made using Node.js, React.js
 
 To start API:
 1. cd backend
-2. npm install
-3. npm start
+2. cp example.env dev.env (Update the env as per needed)
+3. npm install
+4. npm start
 
 To start Frontend:
 1. cd frontend
-2. yarn
-3. yarn start
+2. cp .example.env .env (Update the env as per needed)
+3. yarn
+4. yarn start
