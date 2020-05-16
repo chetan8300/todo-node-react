@@ -5,8 +5,9 @@ const Joi = require('@hapi/joi');
 // User register validation schema
 const registerValidationSchema = data => {
   const schema = Joi.object({
+    name: Joi.string().required(),
     email: Joi.string().email().lowercase().required(),
-    password: Joi.string().min(7).alphanum().required(),
+    password: Joi.string().min(8).required(),
   });
 
   return schema.validate(data, { abortEarly: false });
@@ -16,7 +17,7 @@ const registerValidationSchema = data => {
 const loginValidationSchema = data => {
   const schema = Joi.object({
     email: Joi.string().email().lowercase().required(),
-    password: Joi.string().min(7).alphanum().required(),
+    password: Joi.string().min(8).required(),
   });
 
   return schema.validate(data, { abortEarly: false });
@@ -24,8 +25,8 @@ const loginValidationSchema = data => {
 
 const changePasswordValidationSchema = data => {
   const schema = Joi.object({
-    oldPassword: Joi.string().min(7).alphanum().required(),
-    newPassword: Joi.string().min(7).alphanum().required(),
+    oldPassword: Joi.string().min(8).required(),
+    newPassword: Joi.string().min(8).required(),
   });
 
   return schema.validate(data, { abortEarly: false });

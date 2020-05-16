@@ -95,9 +95,9 @@ exports.changepassword = (req, res) => {
         return res.status(401).send(customErrors([{ field: "oldPassword", message: "Invalid Password!" }]));
       }
 
-      User.update({ id: req.userId }, {
+      User.update({ password: bcrypt.hashSync(req.body.newPassword, 8) }, {
         where: {
-          password: bcrypt.hashSync(req.body.newPassword, 8)
+          id: req.userId
         }
       })
         .then(user => {

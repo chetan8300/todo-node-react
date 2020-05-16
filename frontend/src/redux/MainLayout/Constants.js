@@ -1,0 +1,1 @@
+export const SET_HEADER_NAME = 'MainLayout/SET_HEADER_NAME';
